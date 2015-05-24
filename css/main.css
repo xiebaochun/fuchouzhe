@@ -1,0 +1,448 @@
+body,html{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding:0;
+	background: #000;
+}
+.bg{
+	width:100%;
+	height: 100%;
+}
+.content{
+	position: absolute;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+#loader{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	text-align: center;
+	padding-top: 50%;
+	font-size: 3em;
+	color: #fefefe;
+	background: #222;
+}
+#tip0_bt {
+	position: absolute;
+	/*bottom: 0px;*/
+	/*left: 0px;*/
+	z-index: 3;
+	-webkit-animation: index_image_animate 0.8s infinite; /* Safari 4+ */
+	-moz-animation:    index_image_animate 0.8s infinite; /* Fx 5+ */
+	-o-animation:      index_image_animate 0.8s infinite; /* Opera 12+ */
+	animation:         index_image_animate 0.8s infinite; /* IE 10+, Fx 29+ */
+}
+.flash{
+		-webkit-animation: index_image_animate 0.8s infinite; /* Safari 4+ */
+		-moz-animation:    index_image_animate 0.8s infinite; /* Fx 5+ */
+		-o-animation:      index_image_animate 0.8s infinite; /* Opera 12+ */
+		animation:         index_image_animate 0.8s infinite; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes index_image_animate {
+  0%   { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes index_image_animate {
+  0%   { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+@-o-keyframes index_image_animate {
+  0%   { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+@keyframes index_image_animate {
+  0%   { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.rotate_animate_30 {
+	-webkit-animation-name: spin;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+
+    -moz-animation-name: spin;
+    -moz-animation-duration: 1000ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+    -moz-animation-fill-mode: forwards;
+
+    -ms-animation-name: spin;
+    -ms-animation-duration: 1000ms;
+    -ms-animation-iteration-count: 1;
+    -ms-animation-timing-function: linear;
+    -ms-animation-fill-mode: forwards;
+
+    animation-name: spin;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+   
+}
+@-ms-keyframes spin { 
+    from { 
+        -ms-transform: rotate(-30deg); 
+    } to { 
+        -ms-transform: rotate(0deg); 
+    }
+}
+@-moz-keyframes spin { 
+    from { 
+        -moz-transform: rotate(-30deg); 
+    } to { 
+        -moz-transform: rotate(0deg); 
+    }
+}
+@-webkit-keyframes spin { 
+    from { 
+        -webkit-transform: rotate(-30deg); 
+    } to { 
+        -webkit-transform: rotate(0deg); 
+    }
+}
+@keyframes spin { 
+    from { 
+        transform: rotate(-30deg); 
+    } to { */
+        transform: rotate(0deg); 
+    }
+}
+.v_middle{
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+#bottom_img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+}
+.tips{
+	/*display: none;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	
+}
+.tips img{
+	position: absolute;
+	width: 100%;
+}
+
+.text{
+	width: 100%;
+}
+.ads{
+	display: none;
+	position: absolute;
+	right:2%;
+	top: 13%;
+	max-width: 500px;
+	width: 40%;
+}
+#tip_01{
+display: none;
+
+}
+#tip1_cloud{
+	display: none;
+}
+#tip1_01{
+	width: 100%;
+	display: none;
+}
+/*小妹妹*/
+#tip1_02{
+	display: none;
+	/*width: 50%;
+	top:50%;*/
+	/*bottom: 6%;*/
+}
+/*文字*/
+#tip1_03{
+	display: none;
+	/*width: 200px;*/
+	/*top:13%;*/
+}
+#tip1_04{
+	display: none;
+	width: 100%;
+}
+/*底部*/
+#tip1_05{
+	display: none;
+	width: 100%;
+	
+}
+
+#tip2_01{
+	width: 100%;
+}
+/*小妹妹*/
+#tip2_02{
+	
+}
+/*文字*/
+#tip2_03{
+	-webkit-transform: rotate(-30deg);
+	-ms-transform: rotate(-30deg); 
+	-o-transform: rotate(-30deg); 
+	-moz-transform: rotate(-30deg);
+	transform: rotate(-30deg);   
+
+}
+#tip2_04{
+	width: 100%;
+}
+/*底部*/
+#tip2_05{	
+	width: 100%;
+}
+
+
+
+
+#tip3_01{
+	width: 100%;
+	
+}
+#tip3_01_1{
+	position: 
+}
+/*小妹妹*/
+#tip3_02{	
+	width: 100%;		
+}
+
+/*文字*/
+#tip3_03{
+	width: 100%;
+	opacity: 0;
+	/*width: 200px;*/
+	
+}
+#tip3_04{
+	opacity: 0;
+	width: 100%;
+}
+/*底部*/
+#tip3_05{
+	display: none;
+	width: 100%;
+	bottom: 0px;
+}
+
+
+
+#tip_04{
+	display: none;
+}
+
+#tip4_01{
+	width: 100%;
+	
+}
+/*小妹妹*/
+#tip4_02{
+	width: 100%;
+
+}
+/*文字*/
+#tip4_03{
+	
+	display: none;
+	width: 100%;
+	/*width: 200px;*/
+	
+}
+#tip4_04{
+	
+    display: none;
+	width: 100%;
+}
+/*底部*/
+#tip4_05{
+	
+	display: none;
+	width: 100%;
+	
+}
+#tip4_06{
+	
+	display: none;
+	width: 100%;
+	
+}
+
+
+#tip_05{
+	display: none;
+}
+
+#tip5_01{
+	width: 100%;
+	
+}
+/*小妹妹*/
+#tip5_02{
+	width: 100%;
+	/*top:50%;*/
+}
+/*文字*/
+#tip5_03{
+	width: 100%;
+}
+#tip5_04{
+	
+	width: 100%;
+}
+/*底部*/
+#tip5_05{
+	display: none;
+	/*width: 50%;*/
+}
+
+#tip_06{
+	display: none;
+}
+
+#tip_07{
+	display: none;
+}
+
+.bt{
+	display: none;
+	z-index: 5;
+}
+#go_bt{
+	width: 30%;
+	left: 35%;
+	bottom: 10%;
+}
+#more_bt{
+	width: 30%;
+	left: 35%;
+	bottom: 10%;
+}
+#tip7_02{
+	z-index: 1;
+	
+	
+}
+#tip7_03{
+	z-index: 0;
+	opacity: 0;
+	
+}
+
+#tip7_04{
+    z-index: 0;
+	opacity: 0;
+}
+#tip7_tab{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+#tip_08{
+	display: none;
+}
+/*text_box*/
+#tip8_02{
+	width: 40%;
+	left: 30%;
+	bottom: 40%;
+}
+#tip8_03{
+	width: 40%;
+	left: 30%;
+	bottom: 20%;
+}
+#tip8_04{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+#text_input{
+	opacity: 0.8;
+	position: absolute;
+	
+	height: 3.5%;
+	background: #000;
+	font-size: 16px;
+	color: #fff;
+	border: 0;
+	width: 40%;
+	left: 30%;
+	bottom: 40%;
+}
+#tip_09{
+	display: none;
+}
+#tip9_02{
+   width: 30%;
+    left: 35%;
+    top: 60%;
+}
+#tip9_03{
+display: none
+}
+#tip9_04{
+	display: none;
+    width: 20%;
+    left: 40%;
+    top: 50%;
+}
+
+#tip_10{
+	display: none;
+}
+#tip10_02{
+   width: 30%;
+   left: 35%;
+   top: 60%;
+}
+#tip10_03{
+display: none
+}
+#tip10_04{
+	display: none;
+	width: 20%;
+	left: 40%;
+	top: 50%;
+}
+
+#tip_11{
+	display: none;
+}
+#tip11_03{
+	opacity: 1;
+	z-index: 6;
+}
+
+#tip11_04{
+	opacity: 0;
+	z-index: 5;
+}
+#tip11_05{
+	width: 10%;
+	position:absolute;
+	right: 6%;
+	top:6%;
+	z-index: 7;
+}

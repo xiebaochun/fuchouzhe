@@ -469,13 +469,15 @@
     <img class="v-middle" id="tip11_04" src="images/07_01/text_02.png" /> 
     <img id="tip11_05" src="images/07_01/x_bt.png" /> 
    </div> 
-   <div class="tips" id="tip_10"> 
+   <!-- 中奖失败使用下面的div -->
+   <div class="tips" id="tip_10" style="display: none;"> 
     <img class="bg" id="tip10_01" src="images/09/bg.jpg" /> 
     <img id="tip10_02" src="images/bt_share.png" /> 
     <img class="bg" id="tip10_03" src="images/09/share_bg.jpg" /> 
     <img id="tip10_04" src="images/share_back_bt.png" /> 
    </div> 
-   <div class="tips" id="tip_09"> 
+   <!-- 中奖成功使用下面的div -->
+   <div class="tips" id="tip_09" style="display: none;"> 
     <img class="bg" id="tip9_01" src="images/08/bg.jpg" /> 
     <img id="tip9_02" src="images/bt_share.png" /> 
     <img class="bg" id="tip9_03" src="images/08/share_bg.jpg" /> 
@@ -484,7 +486,7 @@
    <div class="tips" id="tip_08"> 
     <img class="bg" id="tip8_01" src="images/07/bg.jpg" /> 
     <img id="tip8_02" src="images/07/text_box.png" /> 
-    <input id="text_input" type="text" /> 
+    <input id="text_input" type="text" onkeyup="value=this.value.replace(/\D+/g,'')"/> 
     <img id="tip8_03" src="images/07/bt_cj.png" /> 
     <img id="tip8_04" src="images/07/helper_bt.png" /> 
    </div> 

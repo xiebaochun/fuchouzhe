@@ -31,7 +31,7 @@ body,html {
 	z-index: 5;
 	text-align: center;
 	padding-top: 50%;
-	font-size: 3em;
+	font-size: 24px;
 	color: #fefefe;
 	background: #222;
 }
@@ -443,7 +443,7 @@ body,html {
 }
 
 #tip_09 {
-	display: none;
+	
 }
 
 #tip9_02 {
@@ -464,7 +464,7 @@ body,html {
 }
 
 #tip_10 {
-	display: none;
+	
 }
 
 #tip10_02 {

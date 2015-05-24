@@ -1,5 +1,6 @@
 $(function() {
     var isSwiping = false;
+
     imagesLoaded($(".content"),
     function() {
         $("#loader").hide();
@@ -11,11 +12,11 @@ $(function() {
         setTimeout(function() {
             $("#tip2_02").trigger("click");
         },
-        1000)
+        1500)
     });
 
     $("#tip_02").click(function() {
-        console.log("fsdfnsd") $("#tip_01").fadeIn();
+        $("#tip_01").fadeIn();
         $("#tip1_cloud").fadeIn();
         flashFadeIn(1);
     })
@@ -24,7 +25,8 @@ $(function() {
         $("#tip1_0" + index).fadeIn();
         if (index < 6) {
             setTimeout(function() {
-                flashFadeIn(++index) $("#tip1_0" + (index - 1)).fadeOut();
+                flashFadeIn(++index);
+                 $("#tip1_0" + (index - 1)).fadeOut();
                 if (index >= 5) {
                     $("#tip_01").animate({
                         opacity: 0,
@@ -54,8 +56,6 @@ $(function() {
     }
 
     $("#tip_03").click(function() {
-        console.log("click tip_03")
-
         $("#tip3_03").animate({
             opacity: "1"
         },
@@ -87,28 +87,31 @@ $(function() {
 
     $("#tip_04").click(function() {
         $("#tip4_03").fadeIn();
-        grap_flash() $("#tip_05").fadeIn();
-
+        grap_flash();
+        $("#tip_05").fadeIn();
     })
 
     function grap_flash(index) {
         $("#tip4_04").fadeIn();
+        $("#tip4_04").animate({left:"+50px",top:"+50px"},{duration:100,complete:function(){}});
         setTimeout(function() {
             $("#tip4_04").fadeOut();
             $("#tip4_05").fadeIn();
+            $("#tip4_05").animate({left:"-25px",top:"+50px"},{duration:100,complete:function(){}});
         },
-        1000);
+        500);
         setTimeout(function() {
             $("#tip4_05").fadeOut();
             $("#tip4_06").fadeIn();
+            $("#tip4_06").animate({left:"+25px",top:"+50px"},{duration:100,complete:function(){}});
         },
-        2000);
+        1000);
         setTimeout(function() {
             $("#tip4_06").fadeOut();
             $("#tip_04").fadeOut();
             $("#tip_05").trigger("click");
         },
-        3000);
+        1500);
 
     }
 
@@ -178,10 +181,12 @@ $(function() {
                 $("#tip7_02").css({
                     "opacity": "0",
                     "z-index": "0"
-                }) $("#tip7_03").css({
+                });
+                $("#tip7_03").css({
                     "opacity": "1",
                     "z-index": "1"
-                }) $("#tip7_03").addClass("animated_faster fadeInUp");
+                });
+                $("#tip7_03").addClass("animated_faster fadeInUp");
                 $('#tip7_03').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                 function() {
                     isSwiping = false;
@@ -208,10 +213,12 @@ $(function() {
                 $("#tip7_03").css({
                     "opacity": "0",
                     "z-index": "0"
-                }) $("#tip7_04").css({
+                });
+                $("#tip7_04").css({
                     "opacity": "1",
                     "z-index": "1"
-                }) $("#tip7_04").addClass("animated_faster fadeInUp");
+                });
+                $("#tip7_04").addClass("animated_faster fadeInUp");
                 $('#tip7_04').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                 function() {
                     isSwiping = false;
@@ -230,10 +237,12 @@ $(function() {
                 $("#tip7_03").css({
                     "opacity": "0",
                     "z-index": "0"
-                }) $("#tip7_02").css({
+                }); 
+                $("#tip7_02").css({
                     "opacity": "1",
                     "z-index": "1"
-                }) $("#tip7_02").addClass("animated_faster fadeInDown");
+                });
+                $("#tip7_02").addClass("animated_faster fadeInDown");
                 $('#tip7_02').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                 function() {
                     isSwiping = false;
@@ -259,10 +268,12 @@ $(function() {
                 $("#tip7_04").css({
                     "opacity": "0",
                     "z-index": "0"
-                }) $("#tip7_03").css({
+                });
+                 $("#tip7_03").css({
                     "opacity": "1",
                     "z-index": "1"
-                }) $("#tip7_03").addClass("animated_faster fadeInDown");
+                });
+                 $("#tip7_03").addClass("animated_faster fadeInDown");
                 $('#tip7_03').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                 function() {
                     isSwiping = false;
@@ -286,23 +297,32 @@ $(function() {
     })
 
     $("#tip8_03").click(function() {
+        var tel = $("#text_input").val(); //获取手机号
+        var telReg = !!tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);
+        //如果手机号码不能通过验证
+        if(telReg == false){
+            alert("电话号码格式错误！");
+            console.log("电话号码格式错误！")
+            return false;
+        }
         $("#tip_08").fadeOut();
         var r = Math.random() * 10;
         if (r < 6) {
-            console.log("good") $("#tip_09").fadeIn();
+            $("#tip_09").fadeIn();
             $("#tip9_01").fadeIn();
             $("#tip9_02").fadeIn();
             $("#tip9_03").fadeOut();
             $("#tip9_04").fadeOut();
         } else {
-            console.log("cheer") $("#tip_10").fadeIn();
+             $("#tip_10").fadeIn();
             $("#tip10_01").fadeIn();
             $("#tip10_02").fadeIn();
             $("#tip10_03").fadeOut();
             $("#tip10_04").fadeOut();
         }
 
-    }) $("#tip8_04").click(function() {
+    });
+     $("#tip8_04").click(function() {
         $("#tip_08").fadeOut();
         $("#tip_11").fadeIn();
     })
@@ -313,7 +333,8 @@ $(function() {
         $("#tip9_02").fadeOut();
         $("#tip9_03").fadeIn();
         $("#tip9_04").fadeIn();
-    }) $("#tip10_02").click(function() {
+    });
+     $("#tip10_02").click(function() {
         $("#tip_11").fadeOut();
         $("#tip10_01").fadeOut();
         $("#tip10_02").fadeOut();
@@ -324,7 +345,8 @@ $(function() {
     $("#tip9_04").click(function() {
         $("#tip_09").fadeOut();
         $("#tip_08").fadeIn();
-    }) $("#tip10_04").click(function() {
+    });
+     $("#tip10_04").click(function() {
         $("#tip_10").fadeOut();
         $("#tip_08").fadeIn();
     })
@@ -344,10 +366,12 @@ $(function() {
                 $("#tip11_03").css({
                     "opacity": "0",
                     "z-index": "5"
-                }) $("#tip11_04").css({
+                });
+                 $("#tip11_04").css({
                     "opacity": "1",
                     "z-index": "6"
-                }) $("#tip11_04").addClass("animated_faster fadeInUp");
+                });
+                 $("#tip11_04").addClass("animated_faster fadeInUp");
                 $('#tip11_04').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                 function() {
                     isSwiping = false;
@@ -373,10 +397,12 @@ $(function() {
                 $("#tip11_04").css({
                     "opacity": "0",
                     "z-index": "5"
-                }) $("#tip11_03").css({
+                });
+                 $("#tip11_03").css({
                     "opacity": "1",
                     "z-index": "6"
-                }) $("#tip11_03").addClass("animated_faster fadeInDown");
+                });
+                 $("#tip11_03").addClass("animated_faster fadeInDown");
                 $('#tip11_03').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                 function() {
                     isSwiping = false;

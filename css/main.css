@@ -361,6 +361,7 @@ display: none;
 
 #tip_08{
 	display: none;
+	min-height: 800px;
 }
 /*text_box*/
 #tip8_02{

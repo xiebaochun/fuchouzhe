@@ -306,6 +306,8 @@ $(function() {
             return false;
         }
         $("#tip_08").fadeOut();
+
+        //下面需要用替换成json获取结果
         var r = Math.random() * 10;
         if (r < 6) {
             $("#tip_09").fadeIn();

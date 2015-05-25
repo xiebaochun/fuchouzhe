@@ -178,6 +178,7 @@ $(function() {
 
                 console.log("You swiped " + direction);
                 $("#more_bt").fadeIn();
+                $("#go_bt").fadeIn();
                 $("#tip7_02").css({
                     "opacity": "0",
                     "z-index": "0"
@@ -200,31 +201,31 @@ $(function() {
     $("#tip7_03").swipe({
         swipe: function(event, direction, distance, duration, fingerCount) {
 
-            if (direction == "up") {
+            // if (direction == "up") {
 
-                if (isSwiping) {
-                    return false;
-                }
-                isSwiping = true;
+            //     if (isSwiping) {
+            //         return false;
+            //     }
+            //     isSwiping = true;
 
-                console.log("You swiped " + direction);
-                $("#more_bt").fadeOut();
-                $("#go_bt").fadeIn();
-                $("#tip7_03").css({
-                    "opacity": "0",
-                    "z-index": "0"
-                });
-                $("#tip7_04").css({
-                    "opacity": "1",
-                    "z-index": "1"
-                });
-                $("#tip7_04").addClass("animated_faster fadeInUp");
-                $('#tip7_04').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-                function() {
-                    isSwiping = false;
-                    $('#tip7_04').removeClass("animated_faster fadeInUp");
-                })
-            }
+            //     console.log("You swiped " + direction);
+            //     $("#more_bt").fadeOut();
+            //     $("#go_bt").fadeIn();
+            //     $("#tip7_03").css({
+            //         "opacity": "0",
+            //         "z-index": "0"
+            //     });
+            //     $("#tip7_04").css({
+            //         "opacity": "1",
+            //         "z-index": "1"
+            //     });
+            //     $("#tip7_04").addClass("animated_faster fadeInUp");
+            //     $('#tip7_04').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+            //     function() {
+            //         isSwiping = false;
+            //         $('#tip7_04').removeClass("animated_faster fadeInUp");
+            //     })
+            // }
             if (direction == "down") {
 
                 if (isSwiping) {
@@ -234,6 +235,7 @@ $(function() {
 
                 console.log("You swiped " + direction);
                 $("#more_bt").fadeOut();
+                $("#go_bt").fadeOut();
                 $("#tip7_03").css({
                     "opacity": "0",
                     "z-index": "0"
@@ -252,36 +254,36 @@ $(function() {
         }
     });
 
-    $("#tip7_04").swipe({
-        swipe: function(event, direction, distance, duration, fingerCount) {
+    // $("#tip7_04").swipe({
+    //     swipe: function(event, direction, distance, duration, fingerCount) {
 
-            if (direction == "down") {
+    //         if (direction == "down") {
 
-                if (isSwiping) {
-                    return false;
-                }
-                isSwiping = true;
+    //             if (isSwiping) {
+    //                 return false;
+    //             }
+    //             isSwiping = true;
 
-                console.log("You swiped " + direction);
-                $("#more_bt").fadeIn();
-                $("#go_bt").fadeOut();
-                $("#tip7_04").css({
-                    "opacity": "0",
-                    "z-index": "0"
-                });
-                 $("#tip7_03").css({
-                    "opacity": "1",
-                    "z-index": "1"
-                });
-                 $("#tip7_03").addClass("animated_faster fadeInDown");
-                $('#tip7_03').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
-                function() {
-                    isSwiping = false;
-                    $('#tip7_03').removeClass("animated_faster fadeInDown");
-                })
-            }
-        }
-    });
+    //             console.log("You swiped " + direction);
+    //             $("#more_bt").fadeIn();
+    //             $("#go_bt").fadeOut();
+    //             $("#tip7_04").css({
+    //                 "opacity": "0",
+    //                 "z-index": "0"
+    //             });
+    //              $("#tip7_03").css({
+    //                 "opacity": "1",
+    //                 "z-index": "1"
+    //             });
+    //              $("#tip7_03").addClass("animated_faster fadeInDown");
+    //             $('#tip7_03').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+    //             function() {
+    //                 isSwiping = false;
+    //                 $('#tip7_03').removeClass("animated_faster fadeInDown");
+    //             })
+    //         }
+    //     }
+    // });
 
     $("#go_bt").click(function() {
         $("#tip_07").fadeOut();
@@ -362,7 +364,6 @@ $(function() {
                     return false;
                 }
                 isSwiping = true;
-                index += 1;
                 console.log("You swiped " + direction);
 
                 $("#tip11_03").css({
@@ -393,7 +394,6 @@ $(function() {
                     return false;
                 }
                 isSwiping = true;
-                index += 1;
                 console.log("You swiped " + direction);
 
                 $("#tip11_04").css({

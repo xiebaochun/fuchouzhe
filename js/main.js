@@ -1,23 +1,34 @@
 $(function() {
     var isSwiping = false;
+    var audio_count = 0;
+    var isAllImgLoaded = false;
     createjs.Sound.addEventListener("fileload", handleFileLoad);
-            createjs.Sound.alternateExtensions = ["mp3"];
-            createjs.Sound.registerSounds(
-                [{id:"music1", src:"fengxuebingdong.mp3"},
-                {id:"music2", src:"kaixiangzi.mp3"},
-                {id:"music2", src:"zhuamen.mp3"},
-                {id:"music2", src:"zhuandongjiguang.mp3"}]
-            , "assets/");
+    createjs.Sound.alternateExtensions = ["mp3"];
+    createjs.Sound.registerSounds(
+        [{id:"fengxuebingdong", src:"fengxuebingdong.mp3"},
+        {id:"kaixiangzi", src:"kaixiangzi.mp3"},
+        {id:"zhuamen", src:"zhuamen.mp3"},
+        {id:"zhuandongjiguang", src:"zhuandongjiguang.mp3"}]
+    , "assets/");
 
 
-            function handleFileLoad(event) {
-                // A sound has been preloaded. This will fire TWICE
-                console.log("Preloaded:", event.id, event.src);
-            }
+    function handleFileLoad(event) {
+        // A sound has been preloaded. This will fire TWICE
+        console.log("Preloaded:", event.id, event.src);
+        audio_count++;
+        if(audio_count>=4&&isAllImgLoaded == true){
+             $("#loader").hide();  
+        }
+        // createjs.Sound.play("zhuandongjiguang");
+    }
 
     imagesLoaded($(".content"),
     function() {
-        $("#loader").hide();
+        isAllImgLoaded = true;
+        if(audio_count>=4){
+            $("#loader").hide();    
+        }
+        
     })
 
     $("#tip0_bt").click(function() {
@@ -33,6 +44,7 @@ $(function() {
         $("#tip_01").fadeIn();
         $("#tip1_cloud").fadeIn();
         flashFadeIn(1);
+        createjs.Sound.play("zhuandongjiguang");
     })
 
     function flashFadeIn(index) {
@@ -70,6 +82,7 @@ $(function() {
     }
 
     $("#tip_03").click(function() {
+        createjs.Sound.play("fengxuebingdong");
         $("#tip3_03").animate({
             opacity: "1"
         },
@@ -103,6 +116,7 @@ $(function() {
         $("#tip4_03").fadeIn();
         grap_flash();
         $("#tip_05").fadeIn();
+        createjs.Sound.play("zhuamen");
     })
 
     function grap_flash(index) {
@@ -172,6 +186,7 @@ $(function() {
     })
 
     $("#tip_06").click(function() {
+        createjs.Sound.play("kaixiangzi");
         $(this).fadeOut();
         $("#tip_07").fadeIn();
         setTimeout(function() {
@@ -434,4 +449,98 @@ $(function() {
         $("#tip_08").fadeIn();
     })
 
+      var data = {appId:'',timestamp:'',nonceStr:'',signature:''};
+      $.get('http://game.sinreweb.com/Game/JsConfig/getSignPackage',{url:location.href},function(res){        
+            if(res.err==0){
+              data.appId=res.appId;
+              data.timestamp=res.timestamp;
+              data.nonceStr=res.nonceStr;
+              data.signature=res.signature;
+
+                wx.config({
+                  debug: false,
+                  appId: data.appId,
+                  timestamp: data.timestamp,
+                  nonceStr: data.nonceStr,
+                  signature: data.signature,
+                  jsApiList: [
+                    // 所有要调用的 API 都要加到这个列表中
+                      'checkJsApi',
+                      'onMenuShareTimeline',
+                      'onMenuShareAppMessage',
+                      'onMenuShareQQ',
+                      'onMenuShareWeibo',
+                      'hideMenuItems',
+                      'showMenuItems',
+                      'hideAllNonBaseMenuItem',
+                      'showAllNonBaseMenuItem',
+                      'translateVoice',
+                      'startRecord',
+                      'stopRecord',
+                      'onRecordEnd',
+                      'playVoice',
+                      'pauseVoice',
+                      'stopVoice',
+                      'uploadVoice',
+                      'downloadVoice',
+                      'chooseImage',
+                      'previewImage',
+                      'uploadImage',
+                      'downloadImage',
+                      'getNetworkType',
+                      'openLocation',
+                      'getLocation',
+                      'hideOptionMenu',
+                      'showOptionMenu',
+                      'closeWindow',
+                      'scanQRCode',
+                      'chooseWXPay',
+                      'openProductSpecificView',
+                      'addCard',
+                      'chooseCard',
+                      'openCard'
+                  ]
+                });
+
+            }
+      },'jsonp');
+
+
+
+    wx.ready(function () {
+        
+        var shareData = {
+          title: "距离X宝箱只有一步之遥！还不行动？！",
+          desc: "赴筹者送大礼 尝鲜等你拿",
+          link: "http://fuchouzhe.games.sinreweb.com/yuanyang/",
+          imgUrl: "http://static.sinreweb.com/icon/yuanyang.jpg",
+          trigger: function (res) 
+          { 
+            
+            this.title = "距离X宝箱只有一步之遥！还不行动？！";
+            this.desc = "赴筹者送大礼 尝鲜等你拿";
+            this.link = "http://fuchouzhe.games.sinreweb.com/yuanyang/";
+            this.imgUrl = "http://static.sinreweb.com/icon/yuanyang.jpg";
+      }
+        };
+         var shareData1 = {
+          title: "赴筹者送大礼 尝鲜等你拿",
+          desc: "赴筹者送大礼 尝鲜等你拿",
+          link: "http://fuchouzhe.games.sinreweb.com/yuanyang/",
+          imgUrl: "http://static.sinreweb.com/icon/yuanyang.jpg",
+          trigger: function (res) 
+          { 
+            
+            this.title = "赴筹者送大礼 尝鲜等你拿";
+            this.desc = "赴筹者送大礼 尝鲜等你拿";
+            this.link = "http://fuchouzhe.games.sinreweb.com/yuanyang/";
+            this.imgUrl = "http://static.sinreweb.com/icon/yuanyang.jpg";
+          }
+        };
+        wx.onMenuShareTimeline(shareData1);
+        wx.onMenuShareAppMessage(shareData);
+        wx.onMenuShareQQ(shareData);
+        wx.onMenuShareWeibo(shareData);
+            
+      });
 });

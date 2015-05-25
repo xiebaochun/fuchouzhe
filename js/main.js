@@ -1,5 +1,19 @@
 $(function() {
     var isSwiping = false;
+    createjs.Sound.addEventListener("fileload", handleFileLoad);
+            createjs.Sound.alternateExtensions = ["mp3"];
+            createjs.Sound.registerSounds(
+                [{id:"music1", src:"fengxuebingdong.mp3"},
+                {id:"music2", src:"kaixiangzi.mp3"},
+                {id:"music2", src:"zhuamen.mp3"},
+                {id:"music2", src:"zhuandongjiguang.mp3"}]
+            , "assets/");
+
+
+            function handleFileLoad(event) {
+                // A sound has been preloaded. This will fire TWICE
+                console.log("Preloaded:", event.id, event.src);
+            }
 
     imagesLoaded($(".content"),
     function() {
@@ -313,14 +327,14 @@ $(function() {
         var r = Math.random() * 10;
         if (r < 6) {
             $("#tip_09").fadeIn();
-            $("#tip9_01").fadeIn();
-            $("#tip9_02").fadeIn();
+            //$("#tip9_01").fadeIn();
+            //$("#tip9_02").fadeIn();
             $("#tip9_03").fadeOut();
             $("#tip9_04").fadeOut();
         } else {
              $("#tip_10").fadeIn();
-            $("#tip10_01").fadeIn();
-            $("#tip10_02").fadeIn();
+            //$("#tip10_01").fadeIn();
+            //$("#tip10_02").fadeIn();
             $("#tip10_03").fadeOut();
             $("#tip10_04").fadeOut();
         }
@@ -333,15 +347,15 @@ $(function() {
 
     $("#tip9_02").click(function() {
         $("#tip_11").fadeOut();
-        $("#tip9_01").fadeOut();
-        $("#tip9_02").fadeOut();
+        //$("#tip9_01").fadeOut();
+        //$("#tip9_02").fadeOut();
         $("#tip9_03").fadeIn();
         $("#tip9_04").fadeIn();
     });
      $("#tip10_02").click(function() {
         $("#tip_11").fadeOut();
-        $("#tip10_01").fadeOut();
-        $("#tip10_02").fadeOut();
+        //$("#tip10_01").fadeOut();
+        //$("#tip10_02").fadeOut();
         $("#tip10_03").fadeIn();
         $("#tip10_04").fadeIn();
     })

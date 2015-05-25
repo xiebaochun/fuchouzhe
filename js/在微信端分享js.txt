@@ -1,0 +1,98 @@
+<script type="text/javascript">
+  var data = {appId:'',timestamp:'',nonceStr:'',signature:''};
+  $.get('http://game.sinreweb.com/Game/JsConfig/getSignPackage',{url:location.href},function(res){        
+        if(res.err==0){
+          data.appId=res.appId;
+          data.timestamp=res.timestamp;
+          data.nonceStr=res.nonceStr;
+          data.signature=res.signature;
+
+            wx.config({
+              debug: false,
+              appId: data.appId,
+              timestamp: data.timestamp,
+              nonceStr: data.nonceStr,
+              signature: data.signature,
+              jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                  'checkJsApi',
+                  'onMenuShareTimeline',
+                  'onMenuShareAppMessage',
+                  'onMenuShareQQ',
+                  'onMenuShareWeibo',
+                  'hideMenuItems',
+                  'showMenuItems',
+                  'hideAllNonBaseMenuItem',
+                  'showAllNonBaseMenuItem',
+                  'translateVoice',
+                  'startRecord',
+                  'stopRecord',
+                  'onRecordEnd',
+                  'playVoice',
+                  'pauseVoice',
+                  'stopVoice',
+                  'uploadVoice',
+                  'downloadVoice',
+                  'chooseImage',
+                  'previewImage',
+                  'uploadImage',
+                  'downloadImage',
+                  'getNetworkType',
+                  'openLocation',
+                  'getLocation',
+                  'hideOptionMenu',
+                  'showOptionMenu',
+                  'closeWindow',
+                  'scanQRCode',
+                  'chooseWXPay',
+                  'openProductSpecificView',
+                  'addCard',
+                  'chooseCard',
+                  'openCard'
+              ]
+            });
+
+        }
+  },'jsonp');
+
+
+
+wx.ready(function () {
+    
+    var shareData = {
+      title: "距离X宝箱只有一步之遥！还不行动？！",
+      desc: "赴筹者送大礼 尝鲜等你拿",
+      link: "http://fuchouzhe.games.sinreweb.com/yuanyang/",
+      imgUrl: "http://static.sinreweb.com/icon/yuanyang.jpg",
+      trigger: function (res) 
+      { 
+        
+        this.title = "距离X宝箱只有一步之遥！还不行动？！";
+        this.desc = "赴筹者送大礼 尝鲜等你拿";
+        this.link = "http://fuchouzhe.games.sinreweb.com/yuanyang/";
+        this.imgUrl = "http://static.sinreweb.com/icon/yuanyang.jpg
+";
+	}
+    };
+     var shareData1 = {
+      title: "赴筹者送大礼 尝鲜等你拿",
+      desc: "赴筹者送大礼 尝鲜等你拿",
+      link: "http://fuchouzhe.games.sinreweb.com/yuanyang/",
+      imgUrl: "http://static.sinreweb.com/icon/yuanyang.jpg",
+      trigger: function (res) 
+      { 
+        
+        this.title = "赴筹者送大礼 尝鲜等你拿";
+        this.desc = "赴筹者送大礼 尝鲜等你拿";
+        this.link = "http://fuchouzhe.games.sinreweb.com/yuanyang/";
+        this.imgUrl = "http://static.sinreweb.com/icon/yuanyang.jpg";
+      }
+    };
+    wx.onMenuShareTimeline(shareData1);
+    wx.onMenuShareAppMessage(shareData);
+    wx.onMenuShareQQ(shareData);
+    wx.onMenuShareWeibo(shareData);
+        
+  });
+
+</script>

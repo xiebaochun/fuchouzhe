@@ -8,7 +8,9 @@ $(function() {
         [{id:"fengxuebingdong", src:"fengxuebingdong.mp3"},
         {id:"kaixiangzi", src:"kaixiangzi.mp3"},
         {id:"zhuamen", src:"zhuamen.mp3"},
-        {id:"zhuandongjiguang", src:"zhuandongjiguang.mp3"}]
+        {id:"zhuandongjiguang", src:"zhuandongjiguang.mp3"},
+        {id:"button", src:"button.mp3"},
+        {id:"fanye", src:"fanye.mp3"}]
     , "assets/");
 
 
@@ -16,7 +18,7 @@ $(function() {
         // A sound has been preloaded. This will fire TWICE
         console.log("Preloaded:", event.id, event.src);
         audio_count++;
-        if(audio_count>=4&&isAllImgLoaded == true){
+        if(audio_count>=6&&isAllImgLoaded == true){
              $("#loader").hide();  
         }
         // createjs.Sound.play("zhuandongjiguang");
@@ -25,13 +27,14 @@ $(function() {
     imagesLoaded($(".content"),
     function() {
         isAllImgLoaded = true;
-        if(audio_count>=4){
+        if(audio_count>=6){
             $("#loader").hide();    
         }
         
     })
 
     $("#tip0_bt").click(function() {
+        createjs.Sound.play("zhuandongjiguang");
         $(this).parent().fadeOut();
         $("#tip2_03").addClass("rotate_animate_30");
         setTimeout(function() {
@@ -44,7 +47,6 @@ $(function() {
         $("#tip_01").fadeIn();
         $("#tip1_cloud").fadeIn();
         flashFadeIn(1);
-        createjs.Sound.play("zhuandongjiguang");
     })
 
     function flashFadeIn(index) {
@@ -199,7 +201,7 @@ $(function() {
         swipe: function(event, direction, distance, duration, fingerCount) {
 
             if (direction == "up") {
-
+                createjs.Sound.play("fanye");
                 if (isSwiping) {
                     return false;
                 }
@@ -256,7 +258,7 @@ $(function() {
             //     })
             // }
             if (direction == "down") {
-
+                createjs.Sound.play("fanye");
                 if (isSwiping) {
                     return false;
                 }
@@ -315,6 +317,7 @@ $(function() {
     // });
 
     $("#go_bt").click(function() {
+        createjs.Sound.play("button");
         $("#tip_07").fadeOut();
         $("#tip_08").fadeIn();
         setTimeout(function() {
@@ -324,10 +327,12 @@ $(function() {
     })
 
     $("#more_bt").click(function() {
+        createjs.Sound.play("button");
         window.location.href = "http://Z.JD.COM";
     })
 
     $("#tip8_03").click(function() {
+        createjs.Sound.play("button");
         var tel = $("#text_input").val(); //获取手机号
         var telReg = !!tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);
         //如果手机号码不能通过验证
@@ -356,11 +361,13 @@ $(function() {
 
     });
      $("#tip8_04").click(function() {
+         createjs.Sound.play("button");
         $("#tip_08").fadeOut();
         $("#tip_11").fadeIn();
     })
 
     $("#tip9_02").click(function() {
+        createjs.Sound.play("button");
         $("#tip_11").fadeOut();
         //$("#tip9_01").fadeOut();
         //$("#tip9_02").fadeOut();
@@ -368,6 +375,7 @@ $(function() {
         $("#tip9_04").fadeIn();
     });
      $("#tip10_02").click(function() {
+        createjs.Sound.play("button");
         $("#tip_11").fadeOut();
         //$("#tip10_01").fadeOut();
         //$("#tip10_02").fadeOut();
@@ -376,10 +384,12 @@ $(function() {
     })
 
     $("#tip9_04").click(function() {
+        createjs.Sound.play("button");
         $("#tip_09").fadeOut();
         $("#tip_08").fadeIn();
     });
      $("#tip10_04").click(function() {
+         createjs.Sound.play("button");
         $("#tip_10").fadeOut();
         $("#tip_08").fadeIn();
     })
@@ -388,7 +398,7 @@ $(function() {
         swipe: function(event, direction, distance, duration, fingerCount) {
 
             if (direction == "up") {
-
+                 createjs.Sound.play("fanye");
                 if (isSwiping) {
                     return false;
                 }
@@ -418,7 +428,7 @@ $(function() {
         swipe: function(event, direction, distance, duration, fingerCount) {
 
             if (direction == "down") {
-
+                 createjs.Sound.play("fanye");
                 if (isSwiping) {
                     return false;
                 }
@@ -445,6 +455,7 @@ $(function() {
     });
 
     $("#tip11_05").click(function() {
+         createjs.Sound.play("button");
         $("#tip_11").fadeOut();
         $("#tip_08").fadeIn();
     })
@@ -524,14 +535,14 @@ $(function() {
       }
         };
          var shareData1 = {
-          title: "赴筹者送大礼 尝鲜等你拿",
+          title: "《远洋京东送大礼 X宝箱有惊喜》",
           desc: "赴筹者送大礼 尝鲜等你拿",
           link: "http://fuchouzhe.games.sinreweb.com/yuanyang/",
           imgUrl: "http://static.sinreweb.com/icon/yuanyang.jpg",
           trigger: function (res) 
           { 
             
-            this.title = "赴筹者送大礼 尝鲜等你拿";
+            this.title = "《远洋京东送大礼 X宝箱有惊喜》";
             this.desc = "赴筹者送大礼 尝鲜等你拿";
             this.link = "http://fuchouzhe.games.sinreweb.com/yuanyang/";
             this.imgUrl = "http://static.sinreweb.com/icon/yuanyang.jpg";

@@ -1,5 +1,7 @@
 # 《富筹者》移动微信项目 #
-在线预览：[http://xiebaochun.github.io/fuchouzhe/](http://xiebaochun.github.io/fuchouzhe/)
+gh-pages在线预览：[http://xiebaochun.github.io/fuchouzhe/](http://xiebaochun.github.io/fuchouzhe/)
+
+正式项目测试：[http://fuchouzhe.games.sinreweb.com/yuanyang/](http://fuchouzhe.games.sinreweb.com/yuanyang/)
 
 1、开启
 

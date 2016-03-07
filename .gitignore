@@ -1,1 +1,3 @@
 rmbdyfile.js
+node_modules/*
+dist/images

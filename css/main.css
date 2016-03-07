@@ -303,7 +303,7 @@ body,html {
 }
 
 #tip_04 {
-	display: none;
+	display: _none;
 }
 
 #tip4_01 {
@@ -367,7 +367,7 @@ body,html {
 }
 
 #tip_07 {
-	display: none;
+	display: _none;
 }
 
 .bt {
@@ -392,8 +392,8 @@ body,html {
 }
 
 #tip7_03 {
-	z-index: 0;
-	opacity: 0;
+	z-index: 1;
+	_opacity: 0;
 }
 
 #tip7_04 {
@@ -495,7 +495,7 @@ body,html {
 }
 
 #tip11_04 {
-	opacity: 0;
+	opacity: 1;
 	z-index: 5;
 }
 

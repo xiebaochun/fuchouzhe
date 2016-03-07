@@ -10,15 +10,11 @@
   <title>《远洋京东送大礼 X宝箱有惊喜》</title> 
   <!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> --> 
   <link rel="stylesheet" type="text/css" href="css/main.css" /> 
-<!--   <script type="text/javascript" src="js/jquery.min.js"></script> 
-  <script type="text/javascript" src="js/imagesloaded.min.js"></script> 
-  <script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script> 
-  <script src="js/soundjs-0.6.1.min.js" type="text/javascript"></script> 
-  <script src="js/weixin.js" type="text/javascript"></script> 
-  <script type="text/javascript" src="js/main.js"></script> -->
-  <script type="text/javascript" src="dist/js/all.min.js"></script>  
+  <link rel="stylesheet" type="text/css" href="css/swiper.min.css" /> 
+  <!-- <script type="text/javascript" src="dist/js/all.min.js"></script>   -->
   <style type="text/css">
        .animated {
+        display: block !important;
           -webkit-animation-duration: 5s;
                   animation-duration: 5s;
           -webkit-animation-fill-mode: both;
@@ -41,6 +37,7 @@
                   animation-fill-mode: both;
         }
         .animated_faster {
+          display: block !important;
           -webkit-animation-duration: 1s;
                   animation-duration: 1s;
           -webkit-animation-fill-mode: both;
@@ -61,6 +58,58 @@
                   animation-duration: 1s;
           animation-fill-mode: both;
                   animation-fill-mode: both;
+        }
+        .animated_200 {
+          display: block !important;
+          -webkit-animation-duration: .2s;
+                  animation-duration: .2s;
+          -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -moz-animation-duration: .2s;
+                  animation-duration: .2s;
+          -moz-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -o-animation-duration: .2s;
+                  animation-duration: .2s;
+          -o-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          -ms-animation-duration: .2s;
+                  animation-duration: .2s;
+          -ms-animation-fill-mode: both;
+                  animation-fill-mode: both;
+          animation-duration: .2s;
+                  animation-duration: .2s;
+          animation-fill-mode: both;
+                  animation-fill-mode: both;
+        }
+        @-webkit-keyframes fadeIn {
+          0% {
+
+            opacity: 0;
+          }
+
+          100% {
+            
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeIn {
+          0% {
+            
+            opacity: 0;
+            
+          }
+
+          100% {
+            
+            opacity: 1;
+          }
+        }
+
+        .fadeIn {
+          -webkit-animation-name: fadeIn;
+                  animation-name: fadeIn;
         }
        @-webkit-keyframes fadeInDown {
         0% {
@@ -455,7 +504,12 @@
         -webkit-animation-name: fadeOutUp;
                 animation-name: fadeOutUp;
       }
-
+      .swiper-container {
+          width: 100%;
+          height: 100%;
+      } 
+      .none{display: none !important;}
+      .show{display: block !important;}
     </style> 
  </head> 
  <body> 
@@ -467,8 +521,17 @@
    <div class="tips" id="tip_11"> 
     <img class="bg" id="tip11_01" src="images/07_01/bg.png" /> 
     <img class="bg" id="tip11_02" src="images/07_01/box.png" /> 
-    <img class="v-middle" id="tip11_03" src="images/07_01/text_01.png" /> 
-    <img class="v-middle" id="tip11_04" src="images/07_01/text_02.png" /> 
+    <div class="swiper-container" id="swiper-11">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="v-middle" id="tip11_03" src="images/07_01/text_01.png" /> 
+            </div>
+            <div class="swiper-slide">
+              <img class="v-middle" id="tip11_04" src="images/07_01/text_02.png" /> 
+            </div>
+        </div>
+    </div>
     <img id="tip11_05" src="images/07_01/x_bt.png" /> 
    </div> 
    <!-- 中奖失败使用下面的div -->
@@ -494,8 +557,17 @@
    </div> 
    <div class="tips" id="tip_07"> 
     <img class="bg" id="tip7_01" src="images/06/bg.jpg" /> 
-    <img class="v_middle" id="tip7_02" src="images/06/index.png" /> 
-    <img class="v_middle" id="tip7_03" src="images/06/jingrong_02.png" /> 
+    <div class="swiper-container" id="swiper-07">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="v_middle" id="tip7_02" src="images/06/index.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="v_middle" id="tip7_03" src="images/06/jingrong_02.png" /> 
+            </div>
+        </div>
+    </div>
     <!-- <img class="v_middle" id="tip7_04" src="images/06/jingrong_02.png" />  -->
     <img id="tip7_tab" src="images/06/tab.png" /> 
     <img class="bt" id="more_bt" src="images/06/more_bt.png" /> 
@@ -547,5 +619,11 @@
    </div> 
   </div> 
   <div class="footer"></div> 
+  <script type="text/javascript" src="js/zepto.min.js"></script> 
+  <script type="text/javascript" src="js/imagesloaded.min.js"></script> 
+  <script src="js/swiper.jquery.min.js" type="text/javascript"></script> 
+  <script src="js/soundjs-0.6.1.min.js" type="text/javascript"></script> 
+  <script src="js/weixin.js" type="text/javascript"></script> 
+  <script type="text/javascript" src="js/main.js"></script>
  </body>
 </html>

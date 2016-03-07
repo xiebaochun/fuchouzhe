@@ -198,7 +198,7 @@ $(function() {
         1000);
     })
 
-var mySwiper = new Swiper ('#swiper-11', {
+var mySwiper_11 = new Swiper ('#swiper-11', {
     // Optional parameters
     direction: 'vertical',
     loop: false,
@@ -207,17 +207,20 @@ var mySwiper = new Swiper ('#swiper-11', {
     }
   }) 
 
-var mySwiper = new Swiper ('#swiper-07', {
+var mySwiper_07 = new Swiper ('#swiper-07', {
     // Optional parameters
     direction: 'vertical',
-    loop: true,
+    loop: false,
     onSlideNextEnd:function(swiper){
         console.log(swiper.activeIndex);
-        if(swiper.activeIndex==2){
+        if(swiper.activeIndex==1){
             onMoreBt(1);
-        }else if(swiper.activeIndex==3){
+        }else if(swiper.activeIndex==2){
            onMoreBt(0);
         }
+    },
+    onSlidePrevEnd:function(swiper){
+        onMoreBt(0);
     }
   }) 
 
